@@ -1,15 +1,24 @@
+import { Link } from "react-router-dom";
+
 const Card = ({ article }) => {
   return (
-    <div className="article-card">
-      <h3 className="article-title">{article.title}</h3>
-      <div className="article-meta">
-        <span className="article-author">By {article.author}</span>
-        <div className="article-stats">
-          <span className="votes">👍 {article.votes}</span>
-          <span className="comments">💬 {article.comment_count}</span>
+    <Link to={`/articles/${article.article_id}`}>
+      <div className="article-card">
+        <img
+          src={article.article_img_url}
+          alt={article.title}
+          className="article-image"
+        />
+        <h3>{article.title}</h3>
+        <div className="article-meta">
+          <span>By {article.author}</span>
+          <div className="article-stats">
+            <span className="votes">👍 {article.votes}</span>
+            <span className="comments">💬 {article.comment_count}</span>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
