@@ -18,3 +18,11 @@ export const fetchCommentsByArticleId = (article_id) => {
     .get(`/articles/${article_id}/comments`)
     .then(({ data }) => data.comments);
 };
+
+export const updateArticleVotes = (article_id, inc_votes) => {
+  return newsApi
+    .patch(`/articles/${article_id}`, {
+      inc_votes: inc_votes,
+    })
+    .then(({ data }) => data.article);
+};

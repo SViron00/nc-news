@@ -66,3 +66,23 @@
   margin-top: 0.5rem;
   color: #d1cfcf;
 }
+
+.vote-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  justify-content: center;
+}
+
+.vote-buttons button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vote-buttons .voted {
+  background-color: #e2e8f0;
+  transform: scale(1.1);
+}

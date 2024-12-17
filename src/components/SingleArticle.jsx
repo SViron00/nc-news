@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticleById } from "./api";
 import Comments from "./Comments";
-
+import VoteButtons from "./VoteButtons";
 const SingleArticle = () => {
   const [article, setArticle] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -25,7 +25,7 @@ const SingleArticle = () => {
       <div className="article-info">
         <p>By {article.author}</p>
         <p>Topic: {article.topic}</p>
-        <p>Votes: {article.votes}</p>
+        <VoteButtons article_id={article_id} initialVotes={article.votes} />
       </div>
       <Comments article_id={article_id} />
     </div>
