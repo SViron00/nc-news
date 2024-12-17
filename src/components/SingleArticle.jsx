@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticleById } from "./api";
+import Comments from "./Comments";
 
 const SingleArticle = () => {
   const [article, setArticle] = useState(null);
@@ -25,8 +26,8 @@ const SingleArticle = () => {
         <p>By {article.author}</p>
         <p>Topic: {article.topic}</p>
         <p>Votes: {article.votes}</p>
-        <p>Comments: {article.comment_count}</p>
       </div>
+      <Comments article_id={article_id} />
     </div>
   );
 };
