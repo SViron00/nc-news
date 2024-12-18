@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchCommentsByArticleId } from "./api";
 import CommentCard from "./CommentCard";
+import CommentForm from "./CommentForm";
 
 const Comments = ({ article_id }) => {
   const [comments, setComments] = useState([]);
@@ -17,6 +18,7 @@ const Comments = ({ article_id }) => {
 
   return (
     <section className="comments-section">
+      <CommentForm article_id={article_id} setComments={setComments} />
       <h3>Comments ({comments.length})</h3>
       <div className="comments-list">
         {comments.map((comment) => (
