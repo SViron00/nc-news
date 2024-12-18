@@ -22,7 +22,11 @@ const Comments = ({ article_id }) => {
       <h3>Comments ({comments.length})</h3>
       <div className="comments-list">
         {comments.map((comment) => (
-          <CommentCard key={comment.comment_id} comment={comment} />
+          <CommentCard
+            key={comment.comment_id}
+            comment={comment}
+            setComments={setComments}
+          />
         ))}
       </div>
     </section>
