@@ -41,13 +41,16 @@
   padding: 2em;
 }
 
-.read-the-docs {
-  color: #888;
-}
-
 .comments-section {
   margin-top: 2rem;
   padding: 1rem;
+}
+
+.comment-body {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  color: #333;
 }
 
 .comment-card {
@@ -84,15 +87,6 @@
 .vote-buttons .voted {
   background-color: #e2e8f0;
   transform: scale(1.1);
-}
-
-.submit-message.error {
-  color: #dc3545;
-  font-weight: bold;
-  padding: 8px;
-  background-color: #ffe6e6;
-  border-radius: 4px;
-  margin: 8px 0;
 }
 
 .delete-button {

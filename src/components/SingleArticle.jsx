@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchArticleById } from "./api";
 import Comments from "./Comments";
 import VoteButtons from "./VoteButtons";
+
 const SingleArticle = () => {
   const [article, setArticle] = useState(null);
   const [isLoading, setIsLoading] = useState(true);

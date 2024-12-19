@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchAllArticles } from "./api";
+import SortControls from "./SortControls";
 import Card from "./Card";
 
 const TopicArticles = () => {
@@ -20,6 +21,7 @@ const TopicArticles = () => {
   return (
     <div>
       <h2>{topic} Articles</h2>
+      <SortControls setArticles={setArticles} />
       <div className="articles-container">
         {articles.map((article) => (
           <Card key={article.article_id} article={article} />

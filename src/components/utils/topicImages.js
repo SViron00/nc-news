@@ -1,6 +1,7 @@
 export const topicImages = {
-  coding: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-  football: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55",
-
-  cooking: "https://images.unsplash.com/photo-1466637574441-749b8f19452f",
+  coding: "https://miro.medium.com/v2/resize:fit:1400/0*7VyEZgzwUhQMeBqb",
+  football:
+    "https://www.nbc.com/sites/nbcblog/files/styles/scale_1280/public/2024/07/paris-2024-olympics-soccer.jpg",
+  cooking:
+    "https://info.ehl.edu/hubfs/Imported_Blog_Media/1440x960-cooking-terms-1.jpg",
 };
