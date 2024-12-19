@@ -9,6 +9,8 @@ const Header = () => {
       <nav>
         <span style={{ margin: "0 20px" }}></span>
         <Link to="/articles">All Articles</Link>
+        <span style={{ margin: "0 20px" }}></span>
+        <Link to="/topics">Topics</Link>
       </nav>
     </header>
   );
