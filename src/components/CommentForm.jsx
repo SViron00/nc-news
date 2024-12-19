@@ -31,7 +31,7 @@ const CommentForm = ({ article_id, setComments }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="comment-form">
+    <form onSubmit={handleSubmit}>
       <textarea
         value={newComment}
         onChange={(e) => setNewComment(e.target.value)}
@@ -41,7 +41,7 @@ const CommentForm = ({ article_id, setComments }) => {
       <button type="submit" disabled={isSubmitting}>
         Post Comment
       </button>
-      {submitMessage && <p className="submit-message">{submitMessage}</p>}
+      {submitMessage && <p>{submitMessage}</p>}
     </form>
   );
 };

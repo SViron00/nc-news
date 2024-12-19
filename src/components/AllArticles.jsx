@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchAllArticles } from "./api";
 import Card from "./Card";
+import SortControls from "./SortControls";
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
@@ -16,10 +17,13 @@ const ArticlesList = () => {
   if (isLoading) return <p>Loading articles...</p>;
 
   return (
-    <div className="articles-container">
-      {articles.map((article) => (
-        <Card key={article.article_id} article={article} />
-      ))}
+    <div>
+      <SortControls setArticles={setArticles} />
+      <div className="articles-container">
+        {articles.map((article) => (
+          <Card key={article.article_id} article={article} />
+        ))}
+      </div>
     </div>
   );
 };
