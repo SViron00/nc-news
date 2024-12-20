@@ -8,15 +8,22 @@ const SingleArticle = () => {
   const [article, setArticle] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const { article_id } = useParams();
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchArticleById(article_id).then((articleData) => {
-      setArticle(articleData);
-      setIsLoading(false);
-    });
+    fetchArticleById(article_id)
+      .then((article) => {
+        setArticle(article);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setError("Article not found!");
+        setIsLoading(false);
+      });
   }, [article_id]);
 
   if (isLoading) return <p>Loading article...</p>;
+  if (error) return <div className="error-message">{error}</div>;
 
   return (
     <div className="single-article">

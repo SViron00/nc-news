@@ -4,6 +4,7 @@ import { updateArticleVotes } from "./api";
 const VoteButtons = ({ article_id, initialVotes }) => {
   const [votes, setVotes] = useState(initialVotes);
   const [userVote, setUserVote] = useState(0);
+  const [error, setError] = useState(null);
 
   const handleVote = (increment) => {
     if (userVote !== increment) {
@@ -12,11 +13,12 @@ const VoteButtons = ({ article_id, initialVotes }) => {
 
       setVotes(newVoteCount);
       setUserVote(increment);
+      setError(null);
 
       updateArticleVotes(article_id, voteChange).catch((error) => {
         setVotes(votes);
         setUserVote(userVote);
-        alert("Voting failed - please try again!");
+        setError("Voting failed - please try again!");
       });
     }
   };
@@ -26,6 +28,7 @@ const VoteButtons = ({ article_id, initialVotes }) => {
       <button
         onClick={() => handleVote(1)}
         className={userVote === 1 ? "voted" : ""}
+        disabled={!!error}
       >
         👍
       </button>
@@ -33,11 +36,12 @@ const VoteButtons = ({ article_id, initialVotes }) => {
       <button
         onClick={() => handleVote(-1)}
         className={userVote === -1 ? "voted" : ""}
+        disabled={!!error}
       >
         👎
       </button>
+      {error && <div className="error-message vote-error">{error}</div>}
     </div>
   );
 };
-
 export default VoteButtons;
