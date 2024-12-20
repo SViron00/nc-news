@@ -3,11 +3,14 @@ import { deleteComment } from "./api";
 
 const CommentCard = ({ comment, setComments }) => {
   const [isDeleting, setIsDeleting] = useState(false);
+  const [error, setError] = useState(null);
   const currentUser = "grumpy19";
   const isAuthor = comment.author === currentUser;
 
   const handleDelete = () => {
     setIsDeleting(true);
+    setError(null);
+
     deleteComment(comment.comment_id)
       .then(() => {
         setComments((currentComments) =>
@@ -21,7 +24,7 @@ const CommentCard = ({ comment, setComments }) => {
             currentComments.filter((c) => c.comment_id !== comment.comment_id)
           );
         } else {
-          alert("Failed to delete comment");
+          setError("Failed to delete comment");
         }
       });
   };
@@ -44,6 +47,7 @@ const CommentCard = ({ comment, setComments }) => {
           </button>
         )}
       </div>
+      {error && <div className="error-message">{error}</div>}
     </div>
   );
 };

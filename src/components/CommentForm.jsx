@@ -37,11 +37,24 @@ const CommentForm = ({ article_id, setComments }) => {
         onChange={(e) => setNewComment(e.target.value)}
         placeholder="Write your comment here..."
         disabled={isSubmitting}
+        className={submitMessage.includes("Failed") ? "error-input" : ""}
       />
       <button type="submit" disabled={isSubmitting}>
         Post Comment
       </button>
-      {submitMessage && <p>{submitMessage}</p>}
+      {submitMessage && (
+        <p
+          className={`submit-message ${
+            submitMessage.includes("Failed")
+              ? "error"
+              : submitMessage.includes("success")
+              ? "success"
+              : "info"
+          }`}
+        >
+          {submitMessage}
+        </p>
+      )}
     </form>
   );
 };

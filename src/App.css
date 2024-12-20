@@ -138,3 +138,62 @@
   border-radius: 8px 8px 0 0;
   margin-bottom: 12px;
 }
+
+.submit-message {
+  padding: 8px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.submit-message.error {
+  background-color: #ffe6e6;
+  color: #dc3545;
+}
+
+.submit-message.success {
+  background-color: #e6ffe6;
+  color: #28a745;
+}
+
+.submit-message.info {
+  background-color: #e6f3ff;
+  color: #0066cc;
+}
+
+.error-input {
+  border-color: #dc3545;
+}
+
+.error-message {
+  background-color: #ffe6e6;
+  color: #dc3545;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+.error-message {
+  background-color: #ffe6e6;
+  color: #dc3545;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+.error-message {
+  background-color: #ffe6e6;
+  color: #dc3545;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
